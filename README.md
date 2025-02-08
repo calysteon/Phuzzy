@@ -4,6 +4,8 @@ Phuzzy: Fuzzing Phishing Redirects via User-Agent Mapping
 ## Abstract
 > The goal of this project is to fuzz suspected phishing links for malware enumeration. As malicious actors get more creative at targeted malware delivery to increase efficiency and reduce exposure what can we do to better identify these malicious exploits? This project will fuzz and log the results for further analysis.
 
+We have already detected in the wild, URL shorteners providing different responses to requests based solely off of the user-agent string. We were able to narrow this down to key words that were being used as a filtering mechanism to determine which response/content to provide. Known browsers and mobile devices were given response code 200, and a web page containing both an html and javascript redirect while user-agent strings with unrecognized key words were given a response code 30x with the location set.
+
 ## Obfscation Techniques
 > Through our own analysis we've discovered that malicious actors have become more sophisticated in targeting specific environments like mobile devices. They also employ layered redirects using various techniques to make it less likely to be detected by cybersecurity tools, in some instances even returning 404 errors. 
 
